@@ -71,6 +71,10 @@ def flatten_column(
     df: pandas.DataFrame,
     list_column: str,
 ) -> pandas.DataFrame:
+    """
+    This is basically the "explode" method from pandas,
+    which is not available in 0.23.4.
+    """
     if df.empty:
         return df
     lens_of_lists = df[list_column].apply(len)
